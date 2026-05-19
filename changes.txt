@@ -1,0 +1,67 @@
+SubSync v1.0.0 - Changes
+
+Build Configuration:
+- Created root build.gradle.kts with AGP 8.2.2, Kotlin 1.9.22, KSP 1.9.22-1.0.17
+- Created app/build.gradle.kts with Compose BOM 2024.01.00, Room 2.6.1, Navigation Compose
+- Created settings.gradle.kts, gradle.properties, gradle-wrapper.properties (Gradle 8.5)
+- Created .gitignore, README.md, LICENSE, CHANGELOG.md
+
+GitHub Actions:
+- Created .github/workflows/build-debug.yml (debug APK on push to main)
+- Created .github/workflows/build-release.yml (signed release APK on tag v* or manual)
+- APK output to apk/ folder as SubSync-vX.X.X.apk
+- Keystore alias: subsync
+
+Android Configuration:
+- AndroidManifest.xml with READ_EXTERNAL_STORAGE, READ_MEDIA_VIDEO, READ_MEDIA_AUDIO permissions
+- res/values/themes.xml (dark theme)
+- res/values/strings.xml
+- proguard-rules.pro
+
+Source Files:
+1. SubSyncApp.kt - Application class with Room database initialization (SS-001)
+2. MainActivity.kt - Single activity with Compose, bottom nav, edge-to-edge
+3. data/model/Models.kt - VideoFile, SubtitleTrack, SubtitleEntry Room entities
+4. data/db/DAOs.kt - VideoFileDao, SubtitleTrackDao, SubtitleEntryDao with Flow queries
+5. data/db/AppDatabase.kt - Room database with fallback migration
+6. engine/VideoScanner.kt - SD card/device video file scanner by extension (SS-020-022)
+7. engine/SubtitleEngine.kt - SRT parsing, SRT writing, sync offset, timing scale, mock search/download (SS-030-036)
+8. engine/Translator.kt - Basic word-for-word EN→ES/FR/DE translation maps (SS-040-041)
+9. logger/DebugLogger.kt - Persistent debug logger with SS-xxx error codes
+10. ui/theme/Color.kt - Dark theme: NeonGreen, NeonTeal, NeonCyan, DarkBackground, etc.
+11. ui/theme/Theme.kt - Material3 dark color scheme and typography
+12. ui/components/Components.kt - GlowButton, NeonCard, SectionHeader, EmptyState, StatusBadge, SubtitleChip, VideoCard, BottomNavBar
+13. ui/screens/AppViewModel.kt - Shared ViewModel with all business logic (scan, search, sync, translate, export)
+14. ui/screens/AppNavGraph.kt - Navigation graph (home, video_detail, editor, search, settings)
+15. ui/screens/home/HomeScreen.kt - Video list with search, scan button, progress indicator
+16. ui/screens/video/VideoDetailScreen.kt - Video info, available subtitles, download dialog, delete confirmation
+17. ui/screens/editor/EditorScreen.kt - Subtitle editor with timing adjustment, translation toggle, export, language picker
+18. ui/screens/search/SearchScreen.kt - Full-text subtitle search with translation display
+19. ui/screens/settings/SettingsScreen.kt - Version, Check for Updates, Share, Clear Data, About jnetaol.com
+
+Features Implemented:
+- Video file detection (mp4, mkv, avi, mov, flv, wmv, webm, m4v, mpg, mpeg, 3gp, ogv, ts)
+- Simulated subtitle search and download with 10 language options
+- SRT parsing and writing
+- Sync correction (offset +/- ms, custom offset input)
+- Timing scaling (speed factor)
+- Subtitle translation (EN→ES, EN→FR, EN→DE)
+- Translation toggle display
+- Language selection picker
+- Offline subtitle editing framework
+- SRT export to app external files directory
+- Full text search across all subtitle entries
+- Dark Material Design 3 UI with green/teal neon accent colors
+- Room database with 3 entities (VideoFile, SubtitleTrack, SubtitleEntry)
+- Persistent debug logging with SS-xxx error codes
+- Bottom navigation (Videos, Search, Settings)
+- About section with jnetaol.com link
+- Clear All Data functionality
+
+Technical Specs:
+- MinSdk 29, TargetSdk 34, compileSdk 34
+- ARM64 only (arm64-v8a abi filter)
+- Kotlin 1.9.22, Compose compiler 1.5.8
+- Room 2.6.1 with KSP annotation processing
+- Navigation Compose 2.7.6
+- ProGuard rules for Room and models
