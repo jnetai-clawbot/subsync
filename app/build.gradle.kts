@@ -23,10 +23,10 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = file("../../subsync.keystore")
-            storePassword = System.getenv("KEYSTORE_PASSWORD") ?: "android"
-            keyAlias = "subsync"
-            keyPassword = System.getenv("KEY_PASSWORD") ?: "android"
+            storeFile = rootProject.file("keystore.jks")
+            storePassword = System.getenv("KEYSTORE_PASSWORD") ?: "changeit"
+            keyAlias = System.getenv("KEY_ALIAS") ?: "subsync"
+            keyPassword = System.getenv("KEY_PASSWORD") ?: "changeit"
         }
     }
 
