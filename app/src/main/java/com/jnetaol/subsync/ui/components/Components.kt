@@ -26,6 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jnetaol.subsync.data.model.SubtitleEntry
 import com.jnetaol.subsync.data.model.VideoFile
+import com.jnetaol.subsync.engine.SubtitleEngine
+import com.jnetaol.subsync.engine.VideoScanner
 import com.jnetaol.subsync.ui.theme.*
 import java.io.File
 
