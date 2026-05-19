@@ -77,6 +77,7 @@ fun GlowButton(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NeonCard(
     modifier: Modifier = Modifier,

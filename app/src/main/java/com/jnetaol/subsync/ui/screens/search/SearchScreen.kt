@@ -16,6 +16,7 @@ import com.jnetaol.subsync.ui.components.*
 import com.jnetaol.subsync.ui.screens.AppViewModel
 import com.jnetaol.subsync.ui.theme.*
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchScreen(viewModel: AppViewModel) {
     val query by viewModel.searchTextQuery.collectAsStateWithLifecycle()
