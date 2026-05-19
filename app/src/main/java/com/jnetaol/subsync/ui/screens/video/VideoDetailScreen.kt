@@ -15,6 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.jnetaol.subsync.data.model.SubtitleTrack
 import com.jnetaol.subsync.engine.SubtitleEngine
+import com.jnetaol.subsync.engine.SubtitleMatch
+import com.jnetaol.subsync.engine.VideoScanner
 import com.jnetaol.subsync.ui.components.*
 import com.jnetaol.subsync.ui.screens.AppViewModel
 import com.jnetaol.subsync.ui.theme.*
@@ -230,7 +232,7 @@ fun DownloadDialog(
                         style = MaterialTheme.typography.bodyMedium
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    matches.forEach { match ->
+                    for (match in matches) {
                         NeonCard(
                             modifier = Modifier
                                 .fillMaxWidth()

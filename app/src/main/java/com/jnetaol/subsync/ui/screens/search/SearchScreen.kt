@@ -12,6 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.jnetaol.subsync.engine.SubtitleEngine
 import com.jnetaol.subsync.ui.components.*
 import com.jnetaol.subsync.ui.screens.AppViewModel
 import com.jnetaol.subsync.ui.theme.*
