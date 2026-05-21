@@ -57,7 +57,7 @@ fun SettingsScreen() {
             subtitle = "Get the latest version",
             onClick = {
                 try {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/jnetaol/subsync/releases"))
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/jnetai-clawbot/subsync/releases"))
                     context.startActivity(intent)
                 } catch (e: Exception) {
                     Toast.makeText(context, "No browser available", Toast.LENGTH_SHORT).show()
@@ -110,7 +110,7 @@ fun SettingsScreen() {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "SubSync v1.0.1\nSmart Subtitle Finder & Editor\n© 2025 jnetai.com",
+                    text = "SubSync v1.0.2\nSmart Subtitle Finder & Editor\n© 2025 jnetai.com",
                     style = MaterialTheme.typography.bodySmall,
                     color = TextSecondary,
                     textAlign = TextAlign.Center
