@@ -34,4 +34,4 @@ MIT License
 
 ## About
 
-Made by [jnetaol.com](https://jnetaol.com)
+Made by [jnetai.com](https://jnetai.com)

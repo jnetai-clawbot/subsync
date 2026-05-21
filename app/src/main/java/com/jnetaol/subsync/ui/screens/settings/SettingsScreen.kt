@@ -72,7 +72,7 @@ fun SettingsScreen() {
             onClick = {
                 val shareIntent = Intent(Intent.ACTION_SEND).apply {
                     type = "text/plain"
-                    putExtra(Intent.EXTRA_TEXT, "Check out SubSync - Smart Subtitle Finder & Editor! https://jnetaol.com")
+                    putExtra(Intent.EXTRA_TEXT, "Check out SubSync - Smart Subtitle Finder & Editor! https://jnetai.com")
                 }
                 context.startActivity(Intent.createChooser(shareIntent, "Share SubSync"))
             }
@@ -104,13 +104,13 @@ fun SettingsScreen() {
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "jnetaol.com",
+                    text = "jnetai.com",
                     style = MaterialTheme.typography.titleLarge,
                     color = NeonGreen
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "SubSync v1.0.0\nSmart Subtitle Finder & Editor\n© 2025 jnetaol.com",
+                    text = "SubSync v1.0.1\nSmart Subtitle Finder & Editor\n© 2025 jnetai.com",
                     style = MaterialTheme.typography.bodySmall,
                     color = TextSecondary,
                     textAlign = TextAlign.Center
@@ -123,7 +123,7 @@ fun SettingsScreen() {
         TextButton(
             onClick = {
                 try {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://jnetaol.com"))
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://jnetai.com"))
                     context.startActivity(intent)
                 } catch (e: Exception) {
                 }
@@ -131,7 +131,7 @@ fun SettingsScreen() {
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = "Visit jnetaol.com",
+                text = "Visit jnetai.com",
                 color = NeonTeal,
                 style = MaterialTheme.typography.labelLarge
             )
